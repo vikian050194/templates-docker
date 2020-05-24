@@ -8,6 +8,8 @@ services:
     restart: always
     env_file: 
       - .ENV
+    ports: 
+      - 3306:3306
 
   adminer:
     image: adminer
