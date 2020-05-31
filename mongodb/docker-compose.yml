@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    env_file:
+      - .ENV
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    env_file:
+      - .ENV
+    ports:
+      - 8081:8081
