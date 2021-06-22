@@ -1,0 +1,13 @@
+version: "3.4"
+services:
+  frontend:
+    image: httpd:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./proxy.conf:/usr/local/apache2/conf/httpd.conf
+  backend:
+    image: nginx:alpine
+    volumes:
+      - ./hostname.conf:/etc/nginx/conf.d/default.conf
+    
