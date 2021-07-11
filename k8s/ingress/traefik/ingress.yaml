@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: my-ingress-traefik
   annotations:
-    kubernetes.io/ingress.class: "traefik"
+    kubernetes.io/ingress.class: traefik
 spec:
   rules:
   - host: foobar3000.traefik
