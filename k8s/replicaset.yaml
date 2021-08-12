@@ -6,15 +6,15 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: foo-bar
+      app: color-app
   template:
     metadata:
       labels:
-        app: foo-bar
+        app: color-app
     spec:
       containers:
-      - image: foobarapp:v1
-        name: foo-bar-app
+      - image: nginx:alpine
+        name: color-app
         ports:
         - containerPort: 80
         resources:
