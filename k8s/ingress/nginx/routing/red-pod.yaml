@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: red-pod
   labels:
-    app: color-app
+    app: color-app-red
 spec:
   containers:
   - image: nginx:alpine

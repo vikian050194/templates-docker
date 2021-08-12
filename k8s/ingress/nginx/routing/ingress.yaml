@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress-nginx
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: rainbow.nginx
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/red"      
+        backend:
+          service:
+            name: my-service-red
+            port:
+              number: 80
+      - pathType: Prefix
+        path: "/green"      
+        backend:
+          service:
+            name: my-service-green
+            port:
+              number: 80
+  - host: red.rainbow.nginx
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"      
+        backend:
+          service:
+            name: my-service-red
+            port:
+              number: 80
+  - host: green.rainbow.nginx
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: my-service-green
+            port:
+              number: 80
